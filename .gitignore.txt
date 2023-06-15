@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pycache__
+mangasodoku
+db.sqlite3
+/static
+.DS_Store
