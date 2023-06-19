@@ -2,10 +2,18 @@
 
 {% block content %}
 {% for post in publicacion %}
-<div class="card col-md-4">
-    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-    <h2> Precio {{ post.price }}</h2>
-    <p>{{ post.text|linebreaksbr }}</p>
-</div>
-{% endfor %}
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 id="titulopag" class="text-center text-warning">YA DISPONIBLE</h2>
+      </div>
+      <div class="card col-md-4">
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <h2> Precio {{ post.price }}</h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+
 {% endblock %}
