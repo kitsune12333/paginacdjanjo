@@ -1,3 +1,4 @@
+import os
 """
 Django settings for mangasodoku project.
 
@@ -37,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
     'carrito',
 ]
 
@@ -52,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mangasodoku.urls'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'productos/')
 
 TEMPLATES = [
     {
