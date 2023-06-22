@@ -6,6 +6,9 @@ from .forms import PostForm
 def index(request):
     return render(request, 'carritos/index.html')
 
+def ubicacion(request):
+    return render(request, 'carritos/ubicacion.html')
+
 def carrito_list(request):
     publicacion = Publicacion.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'carritos/carrito_list.html', {'publicacion': publicacion})

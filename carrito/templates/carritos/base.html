@@ -11,10 +11,14 @@
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
   <!-- Custom CSS -->
+  {% block link %}
+  {% endblock link %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'css/letras.css' %}">
-
-
+  <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAH7J--ygikgoeHi1DX6QaMQavI0quRunU}' %"></script>
+  <script src="{% static 'js/ubicacion.js' %}"></script>
+  
+ 
 </head>
 
 <body>
@@ -39,7 +43,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="ubicacion.html">Ubícanos</a>
+          <a class="nav-link" href="{% url 'ubicacion' %}">Ubícanos</a>
         </li>
         <li class="nav-item">
           {% if user.is_authenticated %}
@@ -52,15 +56,10 @@
 
 
   <!-- Catálogo de mangas -->
-  <section id="catalogo">
-    {% block content %}
-    {% endblock %}
-    <div>
-      <p id="promocion-text" class="text-white">Tsundoku ofrece los mangas más emocionantes que pronto estarán disponibles para su compra.
-        Descubre nuevas
-        historias y personajes fascinantes y haz tu pedido ahora para ser uno de los primeros en disfrutar de estas
-        increíbles historias. Ofrecemos envío rápido y seguro para que puedas empezar a disfrutar de tus mangas lo antes
-        posible. ¡No te pierdas la oportunidad de elegir Tsundoku para tus compras de manga!</p>
+  <section id="catalogo" class="container">
+    <div class="row justify-content-md-center">
+      {% block content %}
+      {% endblock %}
     </div>
   </section>
   <footer class="bg-dark text-light">

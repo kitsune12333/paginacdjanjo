@@ -1,19 +1,22 @@
 {% extends 'carritos/base.html' %}
 
+
 {% block content %}
 {% for post in publicacion %}
-<div class="container">
-    <div class="row">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/letras.css' %}">
+<link rel="stylesheet" href="{% static 'css/compra.css' %}">
+
       <div class="col-md-12">
         <h2 id="titulopag" class="text-center text-warning">YA DISPONIBLE</h2>
       </div>
       <div class="card col-md-4">
         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <h1>{{post.upload}}</h1>
+        <a href="{% url 'post_detail' pk=post.pk %}"><img src="{% static '{{post.upload}}' %}"></a>
         <h2> Precio {{ post.price }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
     {% endfor %}
-    </div>
-  </div>
-
 {% endblock %}

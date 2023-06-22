@@ -1,0 +1,38 @@
+
+
+{% extends 'carritos/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/ubicacion.css' %}">
+<!--  LINK MAPA GOOGLE -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 text-left">
+        <div id="map-container" class="d-flex justify-content-start">
+          <div id="map"></div>
+          
+        </div>
+      </div>
+      <div class="col-md-6 ">
+        <div class="row">
+          <div id="fotoubi">
+            <img src="{% static 'img/ubicacion-item.jpeg' %}" alt="UBI">
+          </div>
+          <div class="col-md-12 text-justify">
+            <h4>¡Te damos la bienvenida a nuestro local físico de Tsudonku! Nos complace ofrecerte un espacio dedicado a los
+              amantes del manga, donde podrás sumergirte en un ambiente único y disfrutar de una amplia selección de títulos
+              fascinantes. Nuestro local está ubicado en 467 Av. Valparaíso, Galería calle de
+              Cristal, y estamos ansiosos por recibirte y brindarte una
+              experiencia de compra inigualable. Explora nuestras estanterías de mangas, déjate llevar por la magia
+              de las historias y encuentra tus favoritos. ¡Ven y descubre el mundo de Tsudonku en persona!</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+{% endblock %}
