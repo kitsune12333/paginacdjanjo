@@ -1,4 +1,12 @@
 {% extends 'carritos/base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/letras.css' %}">
+{% endblock links %}
+
+
+
 
 {% block content %}
 <div class="card col-md-4">

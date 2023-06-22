@@ -6,6 +6,12 @@ from .forms import PostForm
 def index(request):
     return render(request, 'carritos/index.html')
 
+def pago(request):
+    return render(request, 'carritos/pago.html')
+
+def formulario(request):
+    return render(request, 'carritos/formulario.html')
+
 def ubicacion(request):
     return render(request, 'carritos/ubicacion.html')
 

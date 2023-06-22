@@ -116,46 +116,47 @@ img {
 
 /* Pie de página */
 #pie {
-    background-color: #614fffb0;
-    
-    
+    background-color: #04011eb0;
+    padding: 20px 0;
     position: relative;
-}
-
-#pie h5 {
+  }
+  
+  #pie h5 {
     font-weight: bold;
     margin-bottom: 10px;
-}
-
-#pie ul li {
+  }
+  
+  #pie ul li {
     margin-bottom: 5px;
-}
-
-#pie ul li a {
+  }
+  
+  #pie ul li a {
     color: #333;
-}
-
-#pie ul li a:hover {
+  }
+  
+  #pie ul li a:hover {
     color: #ff6600;
-}
-
-
-
-#pie form input {
+  }
+  
+  #pie form {
+    margin-top: 10px;
+  }
+  
+  #pie form input {
     width: auto;
-}
-
-#centrarPie {
+  }
+  
+  #centrarPie {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-#centrarPie img {
+  }
+  
+  #centrarPie img {
     margin-top: 10px;
-}
+  }
 
 
 /* formulario-------------------------------- */

@@ -1,12 +1,13 @@
 {% extends 'carritos/base.html' %}
-
-
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+{% endblock links %}
 {% block content %}
 {% for post in publicacion %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-<link rel="stylesheet" href="{% static 'css/letras.css' %}">
-<link rel="stylesheet" href="{% static 'css/compra.css' %}">
+
+
 
       <div class="col-md-12">
         <h2 id="titulopag" class="text-center text-warning">YA DISPONIBLE</h2>

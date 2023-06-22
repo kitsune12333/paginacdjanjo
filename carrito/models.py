@@ -8,7 +8,7 @@ class Publicacion(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     price = models.IntegerField()
-    upload = models.ImageField()
+    upload = models.ImageField(blank=True, null=True)
     descripcion = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)

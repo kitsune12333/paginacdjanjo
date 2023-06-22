@@ -1,11 +1,12 @@
-
-
 {% extends 'carritos/base.html' %}
-{% block content %}
 {% load static %}
-
-
+{% block links %}
 <link rel="stylesheet" href="{% static 'css/ubicacion.css' %}">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH7J--ygikgoeHi1DX6QaMQavI0quRunU"></script>
+{% endblock links %}
+{% block content %}
+
+
 <!--  LINK MAPA GOOGLE -->
 <div class="container">
     <div class="row">
@@ -36,3 +37,8 @@
 
   
 {% endblock %}
+{% block script %}
+  <script src="{% static 'js/ubicacion.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH7J--ygikgoeHi1DX6QaMQavI0quRunU&callback=initMap"
+    async defer></script>
+{% endblock script %}
