@@ -38,7 +38,7 @@ def post_new(request):
 def post_edit(request, pk):
     post = get_object_or_404(Publicacion, pk=pk)
     if request.method == "POST":
-        form = producto(request.POST, instance=post)
+        form = producto(request.POST, instance=post, files=request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -48,4 +48,15 @@ def post_edit(request, pk):
     else:
         form = producto(instance=post)
     return render(request, 'carritos/post_edit.html', {'form': form})
+
+def eliminar_post(request, pk):
+    producto = get_object_or_404(Publicacion, id=pk)
+    producto.delete()
+    messages.success(request, "Eliminado Correctamente")
+    return redirect(to="carrito_list")
+
+def borrar_todo(request):
+    records = Publicacion.objects.all()
+    records.delete()
+    return render(request, 'carritos/carrito_list.html', {'records': records})
 
