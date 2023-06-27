@@ -1,9 +1,11 @@
 {% extends 'carritos/base.html' %}
 {% load static %}
+
 {% block links %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <link rel="stylesheet" href="{% static 'css/productos.css' %}">
 {% endblock links %}
+{% load humanize %}
 {% block content %}
 {% for post in publicacion %}
 
@@ -14,8 +16,10 @@
       </div>
       <div class="card col-md-4">
         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-        <h1>{{post.upload}}</h1>
-        <a href="{% url 'post_detail' pk=post.pk %}"><img src="{% static '{{post.upload}}' %}"></a>
+        
+        {% if post.upload %}
+                <img class="card-img" src="{{post.upload.url}}" alt="imagen-producto" />
+        {% endif %}
         <h2> Precio {{ post.price }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
