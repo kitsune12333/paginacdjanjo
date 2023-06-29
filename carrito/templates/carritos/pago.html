@@ -2,154 +2,164 @@
 {% load static %}
 
 {% block links %}
-<link rel="stylesheet" href="{% static 'css/compra.css' %}">
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 {% endblock links %}
 
 {% block content %}
+</div>
+  <div class="text-center">
 
-<div id="contenedorComp" class="row justify-content-md-center">
-    <div class="col-md-6">
-      <div class="card text-center rounded">
-        <div id="texto_formulario">
-          <h1  class="text-warning text">Formulario de transaccion</h1>
+    <div id="contenedorComp" class="row justify-content-center align-items-center ">
+      <div class="col-md-9 text-center ">
+        <div class="card text-center bg-info">
+          <div id="texto_formulario ">
+            <h3 id="titulopago" class="text-warning text">FORMULARIO DE TRANSACCIÓN</h3>
 
-          <h5 id="titulo" class="text-center text-dark">Monto a pagar: $<span id="montoAPagar"></span></h5>
-          <h3 id="idh3" class="text-center">Metodo de pago</h3>
+            <h5 id="titulo" class="text-center text-dark">Monto a pagar: $<span id="montoAPagar"></span></h5>
+            <h3 id="idh3" class="text-center">Metodo de pago</h3>
+          </div>
+
+          <div class="container text-center">
+            <div id="contenedor-tamaño">
+
+
+              <!-- Button trigger modal -->
+              <button id="datos" type="button" class="btn btn-primary text-center" data-toggle="modal"
+                data-target="#Credito">
+                Credito
+              </button>
+              <button id="datos" type="button" class="btn btn-primary text-center" data-toggle="modal"
+                data-target="#Debito">
+                Debito
+              </button>
+            </div>
+          </div>
+          <div><img class="mx-auto" src="{% static 'img/transbank.png' %}" alt=""></div>
         </div>
+      </div>
 
-        <div class="container text-center">
-          <div id="contenedor-tamaño">
+    </div>
 
-
-            <!-- Button trigger modal -->
-            <button id="datos" type="button" class="btn btn-primary text-center" data-toggle="modal"
-              data-target="#Credito">
-              Credito
-            </button>
-            <button id="datos" type="button" class="btn btn-primary text-center" data-toggle="modal"
-              data-target="#Debito">
-              Debito
+    <!-- Modal -->
+    <div class="modal fade" id="Credito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pagar con credito</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
-        </div>
-        <div><img class="mx-auto" src="{% static 'img/transbank.png' %}" alt=""></div>
-      </div>
-    </div>
-    
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="Credito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Pagar con credito</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form class="was-validated">
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label class="text-dark" for="validationServer01">Primer nombre</label>
-                <input type="text" class="form-control is-valid" id="primerNombre" required>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label class="text-dark"  for="validationServer02">Segundo nombre</label>
-                <input type="text" class="form-control is-valid" id="segundoNombre" required>
+          <div class="modal-body">
+            <form class="was-validated">
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label class="text-dark" for="validationServer01">Primer nombre</label>
+                  <input type="text" class="form-control is-valid" id="primerNombre" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="text-dark" for="validationServer02">Segundo nombre</label>
+                  <input type="text" class="form-control is-valid" id="segundoNombre" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationServer03">Número de tarjeta</label>
+                  <input type="text" class="form-control is-valid" id="numeroTarjeta" required>
+                </div>
               </div>
               <div class="col-md-12 mb-3">
-                <label  for="validationServer03">Número de tarjeta</label>
-                <input type="text" class="form-control is-valid" id="numeroTarjeta" required>
+                <label for="validationServer04">correo</label>
+                <input type="text" class="form-control is-valid" id="correo" required>
               </div>
-            </div>
-            <div class="col-md-12 mb-3">
-              <label for="validationServer04">correo</label>
-              <input type="text" class="form-control is-valid" id="correo" required>
-            </div>
-            <div class="form-row">
-              <div class="col-md-4 mb-3">
-                <label for="validationServer05">cvv</label>
-                <input type="text" class="form-control is-valid" id="cvv" required>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationServer05">cvv</label>
+                  <input type="text" class="form-control is-valid" id="cvv" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationServer06">Año:</label>
+                  <input type="number" class="form-control is-valid" id="anio" placeholder="Ej. 2023" min="1900"
+                    max="2100">
+                  <label for="validationServer07">Mes:</label>
+                  <input type="number" class="form-control is-valid" id="mes" placeholder="Ej. 1" min="1" max="12">
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label for="validationServer07">cuotas</label>
+                  <input type="number" class="form-control is-valid" id="cuotas" required>
+                </div>
               </div>
-              <div class="col-md-4 mb-3">
-                <label for="validationServer06">Año:</label>
-                <input type="number" class="form-control is-valid" id="anio" placeholder="Ej. 2023" min="1900"
-                  max="2100">
-                <label for="validationServer07">Mes:</label>
-                <input type="number" class="form-control is-valid" id="mes" placeholder="Ej. 1" min="1" max="12">
-              </div>
-              <div class="col-md-2 mb-3">
-                <label for="validationServer07">cuotas</label>
-                <input type="number" class="form-control is-valid" id="cuotas" required>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
 
-  <!-- Modal -->
-  <div class="modal fade" id="Debito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form class="was-validated">
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="validationServer01">Primer nombre</label>
-                <input type="text" class="form-control is-valid" id="primerNombre" required>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="validationServer02">Segundo nombre</label>
-                <input type="text" class="form-control is-valid" id="segundoNombre" required>
+    <!-- Modal -->
+    <div class="modal fade" id="Debito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="was-validated">
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationServer01">Primer nombre</label>
+                  <input type="text" class="form-control is-valid" id="primerNombre" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="validationServer02">Segundo nombre</label>
+                  <input type="text" class="form-control is-valid" id="segundoNombre" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationServer03">Número de tarjeta</label>
+                  <input type="text" class="form-control is-valid" id="numeroTarjeta" required>
+                </div>
               </div>
               <div class="col-md-12 mb-3">
-                <label for="validationServer03">Número de tarjeta</label>
-                <input type="text" class="form-control is-valid" id="numeroTarjeta" required>
+                <label for="validationServer04">correo</label>
+                <input type="text" class="form-control is-valid" id="correo" required>
               </div>
-            </div>
-            <div class="col-md-12 mb-3">
-              <label for="validationServer04">correo</label>
-              <input type="text" class="form-control is-valid" id="correo" required>
-            </div>
-            <div class="form-row">
-              <div class="col-md-4 mb-3">
-                <label for="validationServer05">cvv</label>
-                <input type="text" class="form-control is-valid" id="cvv" required>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationServer05">cvv</label>
+                  <input type="text" class="form-control is-valid" id="cvv" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationServer06">fecha exp</label>
+                  <input type="text" class="form-control is-valid" id="fechex" required>
+                </div>
               </div>
-              <div class="col-md-4 mb-3">
-                <label for="validationServer06">fecha exp</label>
-                <input type="text" class="form-control is-valid" id="fechex" required>
-              </div>
-            </div>
 
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
+          </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
-  </div>
+</div>
+<script>
+  // Obtener el resultado del cálculo almacenado en localStorage
+  var monto = localStorage.getItem('monto');
+
+  // Mostrar el monto en la página de pago
+  document.getElementById('montoAPagar').textContent = monto;
+</script>
 
 
 

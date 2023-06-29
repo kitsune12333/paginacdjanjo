@@ -5,7 +5,7 @@ body {
   color: #000000d7;
   background-color: rgb(0, 0, 0);
   
- 
+
 }
 
 #logoFinal{
@@ -22,7 +22,7 @@ body {
 }
 
 #barra{
-  background-color: rgb(2, 1, 10);
+  background-color: rgba(21, 21, 27, 0.678);
 }
 
 a {
@@ -37,6 +37,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+#titulopago{
+  margin-top:1cm ;
 }
 
 .p {
@@ -107,26 +110,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.container{
+  margin: 0 auto;
+}
+
 
 /* Pie de página */
+
 #pie {
-  background-color: #04011eb0;
+  
+  background-color: #ffffffb0;
   padding: 20px 0;
   position: relative;
+  margin-top: 1cm;
 }
 
-#pie h5 {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-#pie ul li {
-  margin-bottom: 5px;
-}
-
-#pie ul li a {
-  color: #333;
-}
 
 #pie ul li a:hover {
   color: #ff6600;
@@ -155,14 +153,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* formulario-------------------------------- */
 
+
 #contenedor_formulario{
   background-color: #0c0568c5;
   width: 800px;
 height: 400px;
   padding-top: 1%;
   border-bottom-right-radius: 20%;
-  cursor: cell;
   position: relative;
+  left: 20%;
 }
 
 #texto_formulario{
@@ -172,7 +171,7 @@ height: 400px;
 }
 
 #idh3{
-  color: aqua;
+  color: rgb(0, 0, 0);
   padding-top: 1%;
   text-shadow: 2px 2px 5px rgba(243, 45, 10, 0.705);
 }
@@ -198,7 +197,6 @@ height: 400px;
 
 #parrafo-pagina2{
   color: #ff8737;
-  margin-right: 50% ;
   padding-right: 2%;
 }
 
@@ -222,4 +220,31 @@ color: #ffffff;
 }
 #bloque{
   margin-top: 2%;
+}
+
+
+
+
+
+
+
+
+/* ---------------- pago ---------------------*/
+#contenedorComp {
+  margin-bottom: auto   ;
+ margin-top: 1cm;
+
+}
+
+
+
+
+
+#contenedor_subida{
+  background-color: #0c0568c5;
+  width: 800px;
+  height: 400px;
+  position: relative;
+  margin: auto;
+  
 }

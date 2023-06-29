@@ -50,6 +50,12 @@ h2 {
   padding-top: 2%;
 }
 
+#precio{
+  margin-top: 3%;
+}
+
+
+
 #promocion-text {
   padding-left: 2%;
   padding-right: 2%;
@@ -65,11 +71,12 @@ h2 {
 }
 
 #chopperxikito {
-  max-width: 20%;
-  position: absolute;
+  max-width: 10%;
+  position: static;
   right: 1%;
-  padding-top: 5%;
+  top: 52%;
 }
+
 
 .card-price {
   text-align: center;

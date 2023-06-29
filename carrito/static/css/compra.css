@@ -74,7 +74,7 @@ h6 {
 }
 
 #encabezado a:hover {
-    color: #ccc;
+    color: #ff6600;
 }
 
 #encabezado .logo {
@@ -126,12 +126,11 @@ img {
     margin-bottom: 10px;
   }
   
-  #pie ul li {
-    margin-bottom: 5px;
-  }
+
   
   #pie ul li a {
-    color: #333;
+    color: #ff6600;
+    margin-bottom: 5px;
   }
   
   #pie ul li a:hover {
