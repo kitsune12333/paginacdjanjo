@@ -9,11 +9,11 @@
 
 
 {% block content %}
-
-<div id="bloque" class=" justify-content-md-center">
-    <div class="card col-md-4 mx-auto">
+</div>
+<div id="bloque" >
+    <div class="card text-white bg-dark mb-3">
         {% if post.upload %}
-        <img class="card-img text-center imagen-ajustada " src="{{post.upload.url}}" alt="imagen-producto" />
+        <img class="card-img text-center" src="{{post.upload.url}}" alt="imagen-producto" />
         {% endif %}
 
         <h2 class="text-center">{{ post.title }}</h2>
@@ -22,14 +22,12 @@
     </div>
 </div>
 {% if user.is_authenticated %}
-<div class="row justify-content-md-center">
-    <div class="card">
+    <div class="card text-white bg-dark mb-3">
         <button type="button" class="btn btn-primary text-center"><a
                 href="{% url 'post_edit' pk=post.pk %}">Editar</a></button>
         <button type="button" class="btn btn-primary text-center"><a
                 href="{% url 'eliminar_post' pk=post.pk %}">Borrar</a></button>
     </div>
-</div>
 {% endif %}
 <div>
     {% endblock %}
