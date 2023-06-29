@@ -60,4 +60,36 @@ window.addEventListener('DOMContentLoaded', () => {
   mostrarCarrito();
 });
 
+// Función para eliminar un producto del carrito
+function eliminarDelCarrito(id) {
+  // Encontrar el índice del producto en el carrito
+  const indiceProducto = carrito.findIndex(producto => producto.id === id);
+
+  if (indiceProducto !== -1) {
+    // Eliminar el producto del carrito
+    carrito.splice(indiceProducto, 1);
+  }
+
+  // Actualizar el carrito en la página
+  mostrarCarrito();
+}
+
+function pagarCarrito() {
+  if (carrito.length === 0) {
+    alert("El carrito está vacío. No se puede proceder al pago.");
+    return;
+  }
+
+  var montoAPagarElement = document.getElementById("total");
+  var monto = parseInt(montoAPagarElement.textContent);
+  montoAPagarElement.textContent = monto;
+
+  // Almacenar el resultado en localStorage
+  localStorage.setItem('monto', monto);
+
+  // Redirigir a la página de pago
+  window.location.href = document.getElementById('pagar_total').getAttribute('href');
+
+}
+
 

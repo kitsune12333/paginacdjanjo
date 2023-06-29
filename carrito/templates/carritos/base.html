@@ -56,7 +56,7 @@
 
   <!-- Catálogo de mangas -->
   <section id="catalogo" class="container">
-    <div class="row justify-content-sm">
+    <div class="row justify-content-sm text-center">
       {% block content %}
       {% endblock %}
     </div>
@@ -76,13 +76,13 @@
           <h5 class="text-center">Redes Sociales</h5>
           <ul class="list-unstyled">
             <li>
-              <p class="text-center"><a href="index.html"><i class="fa fa-facebook"></i> Facebook</a></p>
+              <p class="text-center"><a href="{% url 'index' %}"><i class="fa fa-facebook"></i> Facebook</a></p>
             </li>
             <li>
-              <p class="text-center"><a href="index.html"><i class="fa fa-twitter"></i> Twitter</a></p>
+              <p class="text-center"><a href="{% url 'index' %}"><i class="fa fa-twitter"></i> Twitter</a></p>
             </li>
             <li>
-              <p class="text-center"><a href="index.html"><i class="fa fa-instagram"></i> Instagram</a></p>
+              <p class="text-center"><a href="{% url 'index' %}"><i class="fa fa-instagram"></i> Instagram</a></p>
             </li>
           </ul>
         </div>
@@ -119,7 +119,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
-  <script src="catalogo.js"></script>
+  
 
   {% block script %}
     {% endblock script %}

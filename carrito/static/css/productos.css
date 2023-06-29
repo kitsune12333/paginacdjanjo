@@ -12,10 +12,11 @@
   justify-content: space-between;
 }
 
-.card-body {
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-padding-inline-end: inherit;
 }
 
 .btn {

@@ -11,14 +11,14 @@
 {% block content %}
 </div>
 <div class="row justify-content-md-center">
-    <div class="card col-md-4">
+    <div class="card col-md-4 mx-auto">
         {% if post.upload %}
-                    <img class="card-img" src="{{post.upload.url}}" alt="imagen-producto" />
+                    <img class="card-img text-center imagen-ajustada " src="{{post.upload.url}}" alt="imagen-producto" />
             {% endif %}
     
-        <h2>{{ post.title }}</h2>
+        <h2 class="text-center">{{ post.title }}</h2>
         <p>{{ post.descripcion|linebreaksbr }}</p>
-        <h3 class="text-center">{{ post.price }} $</h3>
+        <h4 class="text-center">{{ post.price }} $</h>
     </div>
 </div>
 {% if user.is_authenticated %}
