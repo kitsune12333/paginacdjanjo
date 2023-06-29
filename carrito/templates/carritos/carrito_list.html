@@ -7,21 +7,17 @@
 {% endblock links %}
 {% load humanize %}
 {% block content %}
-{% for post in publicacion %}
-
-
-
-      <div class="col-md-12">
-        <h2 id="titulopag" class="text-center text-warning">YA DISPONIBLE</h2>
+<div class="card-deck">
+  {% for post in publicacion %}
+        <div class="card text-white bg-dark mb-3">
+          <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+  
+          {% if post.upload %}
+                  <img class="card-img" src="{{post.upload.url}}" alt="imagen-producto" />
+          {% endif %}
+          <h2> Precio {{ post.price }}</h2>
+          <p>{{ post.text|linebreaksbr }}</p>
       </div>
-      <div class="card col-md-4">
-        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-        
-        {% if post.upload %}
-                <img class="card-img" src="{{post.upload.url}}" alt="imagen-producto" />
-        {% endif %}
-        <h2> Precio {{ post.price }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-    {% endfor %}
+      {% endfor %}
+</div>
 {% endblock %}
