@@ -1,0 +1,7 @@
+body{
+    background-image: url("/static/img/fondo.gif");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    
+}

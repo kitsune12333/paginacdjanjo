@@ -9,25 +9,27 @@
 
 
 {% block content %}
-</div>
-<div class="row justify-content-md-center">
+
+<div id="bloque" class=" justify-content-md-center">
     <div class="card col-md-4 mx-auto">
         {% if post.upload %}
-                    <img class="card-img text-center imagen-ajustada " src="{{post.upload.url}}" alt="imagen-producto" />
-            {% endif %}
-    
+        <img class="card-img text-center imagen-ajustada " src="{{post.upload.url}}" alt="imagen-producto" />
+        {% endif %}
+
         <h2 class="text-center">{{ post.title }}</h2>
         <p>{{ post.descripcion|linebreaksbr }}</p>
         <h4 class="text-center">{{ post.price }} $</h>
     </div>
 </div>
 {% if user.is_authenticated %}
-    <div class="row justify-content-md-center">
-        <div class="card">
-            <button type="button" class="btn btn-primary text-center" ><a href="{% url 'post_edit' pk=post.pk %}">Editar</a></button>
-            <button type="button" class="btn btn-primary text-center" ><a href="{% url 'eliminar_post' pk=post.pk %}">Borrar</a></button>
-        </div>
+<div class="row justify-content-md-center">
+    <div class="card">
+        <button type="button" class="btn btn-primary text-center"><a
+                href="{% url 'post_edit' pk=post.pk %}">Editar</a></button>
+        <button type="button" class="btn btn-primary text-center"><a
+                href="{% url 'eliminar_post' pk=post.pk %}">Borrar</a></button>
     </div>
-    {% endif %}
+</div>
+{% endif %}
 <div>
-{% endblock %}
+    {% endblock %}

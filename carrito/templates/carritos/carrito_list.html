@@ -7,7 +7,12 @@
 <link rel="stylesheet" href="{% static 'css/productos.css' %}">
 {% endblock links %}
 {% load humanize %}
+
 {% block content %}
+<h5 id="promocion-text" class="text-justify">Tsundoku ofrece los mangas más emocionantes que pronto estarán disponibles para su compra.
+  Descubre nuevas historias y personajes fascinantes y haz tu pedido ahora para ser uno de los primeros en disfrutar de
+  estas increíbles historias. Ofrecemos envío rápido y seguro para que puedas empezar a disfrutar de tus mangas lo antes
+  posible. ¡No te pierdas la oportunidad de elegir Tsundoku para tus compras de manga!</h5>
 <div class="card-deck">
   {% for post in publicacion %}
   <div class="card text-white bg-dark mb-3">
@@ -19,7 +24,8 @@
       <h4 class="text-center"> Precio {{ post.price }}</h4>
       <p>{{ post.text|linebreaksbr }}</p>
 
-      <button class="btn btn-primary" type="button" onclick="agregarAlCarrito('{{post.pk}}', '{{post.title}}', {{post.price}})">Agregar</button>
+      <button class="btn btn-primary" type="button"
+        onclick="agregarAlCarrito('{{post.pk}}', '{{post.title}}', {{post.price}})">Agregar</button>
       <button class="btn btn-danger" type="button" onclick="eliminarDelCarrito('{{post.pk}}')">Eliminar</button>
     </div>
   </div>
