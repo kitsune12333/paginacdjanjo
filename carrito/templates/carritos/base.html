@@ -38,16 +38,22 @@
           <a class="nav-link" href="{% url 'carrito_list' %}">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'formulario' %}">Contacto</a>
+          <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" href="{% url 'ubicacion' %}">Ubícanos</a>
         </li>
         <li class="nav-item">
-          {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
           <a class="nav-link" href="{% url 'post_new' %}">subir post</a>
-          {% endif %}
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Cerrar Sesión</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">@{{user.username | title}}</a></li>
+        {% else %}
+        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Iniciar Sesión</a></li>
+        {% endif %}
         </li>
       </ul>
     </div>

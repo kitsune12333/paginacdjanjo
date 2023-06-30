@@ -1,0 +1,41 @@
+{% extends 'carritos/base.html' %}
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+
+{% endblock links %}
+
+{% block content %}
+
+
+<!-- Formulario -->
+<div id="texto_formulario" >
+    <h1 class="text-center text-warning">FORMULARIO DE DUDAS</h1>
+    <h3  class="text-center text-info">¡Bienvenido a Tsudonku!</h3>
+    <h5 id="idh5" class="text-justify">Nos encanta que estés interesado/a en nuestros mangas. Si tienes alguna duda o
+      consulta,
+      no dudes en escribirnos utilizando el siguiente formulario. Estamos aquí para ayudarte en todo lo que necesites y
+      brindarte una experiencia de compra excepcional. Nuestro equipo de atención al cliente se esfuerza por responder a
+      todas las preguntas lo más rápido posible, así que no dudes en contactarnos en cualquier momento. ¡Gracias por
+      elegir Tsudonku para tus compras de manga!</h5>
+  </div>
+</div>
+<img src="{% static 'img/subida.png' %}" alt="carrito" class="card-img">
+
+<div id="subida" >
+  <div id="contenedor-tamaño bg-white" >
+    <div id="contenedor_subida" class="container text-center bg-info h-75">
+      <form id="form" method="POST" action="#" class="contact-form">
+        <div class="form-group">
+            <h2>Insertar Datos:</h2>
+                {% csrf_token %}
+                {{ form.as_p }}
+            <button id="enviar" type="submit" value="Submit" class="btn btn-primary text-white">Save changes</button>
+      </form>
+    </div>
+</div>
+
+
+  {% endblock content %}

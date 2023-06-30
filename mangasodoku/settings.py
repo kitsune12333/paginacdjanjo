@@ -18,6 +18,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
+MESSAGE_STORAGE= "django.contrib.messages.storage.cookie.CookieStorage"
+
+LOGIN_REDIRECT_URL= '/'
+LOGOUT_REDIRECT_URL='/'
+
 
 # Application definition
 
@@ -30,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'carrito',
+    
+    
 ]
 
 
@@ -102,6 +109,8 @@ LANGUAGE_CODE = 'es-cl'
 TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
