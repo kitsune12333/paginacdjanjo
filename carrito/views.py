@@ -32,38 +32,38 @@ def carrito_list(request):
     publicacion = Publicacion.objects.all()
     return render(request, 'carritos/carrito_list.html', {'publicacion': publicacion})
 
-def post_detail(request, pk):
-    post = get_object_or_404(Publicacion, pk=pk)
-    return render(request, 'carritos/post_detail.html', {'post': post})
+def publicacion_detail(request, pk):
+    publi = get_object_or_404(Publicacion, pk=pk)
+    return render(request, 'carritos/publicacion_detail.html', {'publi': publi})
 
-def post_new(request):
+def publicacion_new(request):
     if request.method == "POST":
         form = producto(request.POST, files=request.FILES)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
+            publi = form.save(commit=False)
+            publi.author = request.user
+            publi.save()
             messages.success(request, "Producto registrado")
-            return redirect('post_detail', pk=post.pk)
+            return redirect('publicacion_detail', pk=publi.pk)
     else:
         form = producto()
-    return render(request, 'carritos/post_edit.html', {'form': form})
+    return render(request, 'carritos/publicacion_edit.html', {'form': form})
 
-def post_edit(request, pk):
-    post = get_object_or_404(Publicacion, pk=pk)
+def publicacion_edit(request, pk):
+    publi = get_object_or_404(Publicacion, pk=pk)
     if request.method == "POST":
         form = producto(request.POST, instance=post, files=request.FILES)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
+            publi = form.save(commit=False)
+            publi.author = request.user
+            publi.save()
             messages.success(request, "Modificado Correctamente")
-            return redirect('post_detail', pk=post.pk)
+            return redirect('publicacion_detail', pk=publi.pk)
     else:
-        form = producto(instance=post)
-    return render(request, 'carritos/post_edit.html', {'form': form})
+        form = producto(instance=publi)
+    return render(request, 'carritos/publicacion_edit.html', {'form': form})
 
-def eliminar_post(request, pk):
+def eliminar_publicacion(request, pk):
     producto = get_object_or_404(Publicacion, id=pk)
     producto.delete()
     messages.success(request, "Eliminado Correctamente")
@@ -85,7 +85,7 @@ def registro(request):
             user = authenticate(username= formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
             login(request, user)
             messages.success(request, "Te has registrado Correctamente")
-            return redirect(to="home")
+            return redirect(to="index")
         data["form"] = formulario
     return render(request, 'registration/registro.html', data)
 

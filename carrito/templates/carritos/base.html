@@ -46,11 +46,11 @@
         </li>
         <li class="nav-item">
         {% if user.is_authenticated %}
-          <a class="nav-link" href="{% url 'post_new' %}">subir post</a>
+          <a class="nav-link" href="{% url 'publicacion_new' %}">Subir</a>
         {% endif %}
         {% if user.is_authenticated %}
         <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Cerrar Sesión</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">@{{user.username | title}}</a></li>
+        
         {% else %}
         <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Iniciar Sesión</a></li>
         {% endif %}
@@ -61,7 +61,7 @@
 
 
   <!-- Catálogo de mangas -->
-  <section id="catalogo" class="container">
+  <section  class="container">
     <div class="row justify-content-sm text-center">
       {% block content %}
       {% endblock %}

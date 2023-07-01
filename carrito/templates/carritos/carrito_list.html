@@ -6,64 +6,65 @@
 <link rel="stylesheet" href="{% static 'css/letras.css' %}">
 <link rel="stylesheet" href="{% static 'css/productos.css' %}">
 {% endblock links %}
-{% load humanize %}
+
 
 {% block content %}
-<div >
-  <h5 id="promocion-text" class="  text-justify">Tsundoku ofrece los mangas más emocionantes que pronto estarán
-    disponibles para su compra.
-    Descubre nuevas historias y personajes fascinantes y haz tu pedido ahora para ser uno de los primeros en disfrutar
-    de
-    estas increíbles historias. Ofrecemos envío rápido y seguro para que puedas empezar a disfrutar de tus mangas lo
-    antes
-    posible. ¡No te pierdas la oportunidad de elegir Tsundoku para tus compras de manga!</h5>
-</div>
 
-<div class="card-deck">
-  {% for post in publicacion %}
-  <div class="card text-white bg-dark mb-3">
-    <div class=" producto" id="producto{{post.pk}}">
-      <h4 class="text_center"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
-      {% if post.upload %}
-      <img class="card-img text-center imagen-ajustada h-10" src="{{post.upload.url}}" alt="imagen-producto" />
-      {% endif %}
-      <h6 id="precio" class=" text-center"> Precio {{ post.price }}</h6>
-      <p>{{ post.text|linebreaksbr }}</p>
 
-      <button class="btn btn-primary" type="button"
-        onclick="agregarAlCarrito('{{post.pk}}', '{{post.title}}', {{post.price}})">Agregar</button>
-      <button class="btn btn-danger" type="button" onclick="eliminarDelCarrito('{{post.pk}}')">Eliminar</button>
-    </div>
+  <div id="promocion-text" class=" container bg-dark mb-3">
+    <h5 id="promocion-text">¡Tsundoku ofrece los mangas más emocionantes del momento!
+      Descubre nuevas historias y personajes fascinantes y haz tu pedido ahora para ser uno de los primeros en disfrutar
+      de
+      estas increíbles historias. ¡No te pierdas la oportunidad de elegir Tsundoku para tus compras de manga!</h5>
+    <p>Por el momento, solo hay retiro en tienda.</p>
   </div>
-  {% endfor %}
-</div>
 
+  <div class="card-deck ">
+    {% for publi in publicacion %}
+    <div class="card col-sm-6 col-md-4 text-white bg-dark mb-3">
+      <div class=" producto" id="producto{{publi.pk}}">
+        <h5 class="text_center"><a href="{% url 'publicacion_detail' pk=publi.pk %}">{{ publi.title }}</a></h5>
+        {% if publi.upload %}
+        <img id="imagenprod" class="card-img text-center imagen-ajustada " src="{{publi.upload.url}}" alt="imagen-producto" />
+        {% endif %}
+        <h6 id="precio" class=" text-center"> Precio ${{ publi.price }}</h6>
+        <p>{{ publi.text|linebreaksbr }}</p>
 
-
-<div id="cardCarrito">
-
-  <div id="carritoText" class="card mb-3 bg-dark">
-    <div class="row no-gutters">
-      <div class="col-md-4 mx-auto ">
-        <img src="{% static 'img/carritologo.png' %}" alt="carrito" class="card-img">
+        <button class="btn btn-primary" type="button"
+          onclick="agregarAlCarrito('{{publi.pk}}', '{{publi.title}}', {{publi.price}})">Agregar</button>
+        <button class="btn btn-danger" type="button" onclick="eliminarDelCarrito('{{publi.pk}}')">Eliminar</button>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h1 class="card-header">Carrito</h1>
-          <ul id="carrito" class="card-text text-light"></ul>
-          <p class="card-text text-warning">Total: $<span class="text-light" id="total"></span></p>
-          <div class="btn-group">
-            <button class="btn btn-primary" type="button" onclick="vaciarCarrito()">Vaciar carrito</button>
-            <button id="pagar" class="btn btn-primary mr-2" type="button" onclick="pagarCarrito()">Pagar Total</button>
-            <a id="pagar_total" href="{% url 'pago' %}"></a>
+    </div>
+    {% endfor %}
+  </div>
+
+
+
+  <div id="cardCarrito">
+
+    <div id="carritoText" class="card mb-3 bg-dark">
+      <div class="row no-gutters">
+        <div class="col-md-4 mx-auto ">
+          <img src="{% static 'img/carritologo.png' %}" alt="carrito" class="card-img">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-header">Carrito</h1>
+            <ul id="carrito" class="card-text text-light"></ul>
+            <p class="card-text text-warning">Total: $<span class="text-light" id="total"></span></p>
+            <div class="btn-group">
+              <button class="btn btn-primary" type="button" onclick="vaciarCarrito()">Vaciar carrito</button>
+              <button id="pagar" class="btn btn-primary mr-2" type="button" onclick="pagarCarrito()">Pagar
+                Total</button>
+              <a id="pagar_total" href="{% url 'pago' %}"></a>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
 
   </div>
-
-</div>
 
 {% endblock %}
 

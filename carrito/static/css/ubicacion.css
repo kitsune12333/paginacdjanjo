@@ -1,9 +1,16 @@
+body{
+  background-image: url('/static/img/fondo-productos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 /* Set the size of the div element that contains the map */
 #map {
     height: 600px; /* The height is 400 pixels */
     width: 1000px; /* The width is the width of the web page */
     text-align:right ;
   }
+  
 
   
   #barra{
@@ -15,14 +22,11 @@
   }
   .nav-link {
     font-size: 25px;
-    
+  
   }
-  a    {
-    color:#ff6600; ;
-  }
-
+  
   #encabezado {
-    background-color: #92715a;
+    background-color: #ff6600;
     padding: 20px;
   }
   
@@ -31,7 +35,7 @@
   }
   
   #encabezado a:hover {
-    color: #ffffff;
+    color: #ccc;
   }
   
   #encabezado .logo {
@@ -43,7 +47,6 @@
   #encabezado .buscador {
     margin-top: 10px;
   }
-
   
   .logo{
     margin-left: 1cm;

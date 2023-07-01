@@ -22,14 +22,13 @@
       elegir Tsudonku para tus compras de manga!</h5>
   </div>
 </div>
-<img src="{% static 'img/subida.png' %}" alt="carrito" class="card-img">
 
 <div id="subida" >
   <div id="contenedor-tamaño bg-white" >
     <div id="contenedor_subida" class="container text-center bg-info h-75">
       <form id="form" method="POST" action="#" class="contact-form">
         <div class="form-group">
-            <h2>Insertar Datos:</h2>
+            <h2>Inserte sus Datos</h2>
                 {% csrf_token %}
                 {{ form.as_p }}
             <button id="enviar" type="submit" value="Submit" class="btn btn-primary text-white">Save changes</button>

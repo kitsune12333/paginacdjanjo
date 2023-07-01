@@ -1,0 +1,33 @@
+{% extends 'carritos/base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/letras.css' %}">
+{% endblock links %}
+
+
+
+
+{% block content %}
+<div id="bloque" class="text-white bg-dark mb-3">
+    <div >
+        <div>
+            {% if publi.upload %}
+            <img id="imagenedit" class="card-img text-center mb-3" src="{{publi.upload.url}}" alt="imagen-producto" />
+            {% endif %}
+
+            <h2 class="text-center text-danger">{{ publi.title }}</h2>
+            <p id="descripcion" class="text-justify mb-3">{{ publi.descripcion|linebreaksbr }}</p>
+            <h4 class="text-center text-warning">$ {{ publi.price }} </h4>
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    <div class=" text-white bg-dark mb-3">
+        <button type="button" class="btn btn-primary text-center"><a
+                href="{% url 'publicacion_edit' pk=publi.pk %}">Editar</a></button>
+        <button type="button" class="btn btn-primary text-center"><a
+                href="{% url 'eliminar_publicacion' pk=publi.pk %}">Borrar</a></button>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
