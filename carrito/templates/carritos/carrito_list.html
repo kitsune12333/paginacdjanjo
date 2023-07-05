@@ -19,9 +19,9 @@
     <p>Por el momento, solo hay retiro en tienda.</p>
   </div>
 
-  <div class="card-deck ">
+  <div class="row gx-4 gx-lg-5 row-cols-12 row-cols-md-3 row-cols-xl-4 justify-content-center">
     {% for publi in publicacion %}
-    <div class="card col-sm-6 col-md-4 text-white bg-dark mb-3">
+    <div class="card col-mb-5 text-white bg-dark mb-3">
       <div class=" producto" id="producto{{publi.pk}}">
         <h5 class="text_center"><a href="{% url 'publicacion_detail' pk=publi.pk %}">{{ publi.title }}</a></h5>
         {% if publi.upload %}

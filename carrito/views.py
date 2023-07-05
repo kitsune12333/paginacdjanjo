@@ -52,7 +52,7 @@ def publicacion_new(request):
 def publicacion_edit(request, pk):
     publi = get_object_or_404(Publicacion, pk=pk)
     if request.method == "POST":
-        form = producto(request.POST, instance=post, files=request.FILES)
+        form = producto(request.POST, instance=publi, files=request.FILES)
         if form.is_valid():
             publi = form.save(commit=False)
             publi.author = request.user
