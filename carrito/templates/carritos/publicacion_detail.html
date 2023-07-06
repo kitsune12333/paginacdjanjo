@@ -21,7 +21,7 @@
             <h4 class="text-center text-warning">$ {{ publi.price }} </h4>
         </div>
     </div>
-    {% if user.is_authenticated %}
+    {% if user.is_superuser %}
     <div class=" text-white bg-dark mb-3">
         <button type="button" class="btn btn-primary text-center"><a
                 href="{% url 'publicacion_edit' pk=publi.pk %}">Editar</a></button>
